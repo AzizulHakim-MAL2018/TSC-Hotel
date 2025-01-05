@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 require_once 'db_con.php';
@@ -53,23 +52,25 @@ sqlsrv_close($conn);
 </head>
 
 <body>
-    <div class="login-container">
-        <form method="POST" action="">
-            <h1>Login</h1>
-            <?php if (!empty($error)): ?>
-                <p class="error-message"><?php echo htmlspecialchars($error); ?></p>
-            <?php endif; ?>
-            <div class="input-group">
-                <label for="username">Email</label>
-                <input type="email" id="username" name="username" required>
-            </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit" class="login-button">Login</button>
-        </form>
-        <a class="register" href="Registerpage.php">Click here for Register</a>
+    <div class="login-page">
+        <div class="login-container">
+            <form method="POST" action="">
+                <h1>Login</h1>
+                <?php if (!empty($error)): ?>
+                    <p class="error-message"><?php echo htmlspecialchars($error); ?></p>
+                <?php endif; ?>
+                <div class="input-group">
+                    <label for="username">Email</label>
+                    <input type="email" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="login-button">Login</button>
+            </form>
+            <a class="register" href="Registerpage.php">Click here for Register</a>
+        </div>
     </div>
 </body>
 

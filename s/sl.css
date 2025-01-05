@@ -1,167 +1,118 @@
-/* ###############Login Page##################*/
-
-.body {
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-image: url("view4.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-/* Container Styling */
-.login-container {
-    background: #dba3a3;
-    padding: 20px 60px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(35, 34, 34, 0.1);
-    width: 400px;
-    margin-top: 15%;
-    margin-left: 35%;
+h1 {
+    color: #fcece0;
+    font-size: 2em;
+    margin-bottom: 1em;
     text-align: center;
-}
-
-/* Form Title */
-.login-container h1 {
-    font-size: 30px;
-    margin-bottom: 20px;
-    color: #333333;
-}
-
-/* Input Group Styling */
-.input-group {
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.input-group label {
-    font-size: 14px;
-    color: #555555;
-    margin-bottom: 5px;
-    display: block;
-}
-
-.input-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    font-size: 14px;
-    color: #333333;
-    background-color: #ffffff;
-}
-
-.input-group input:focus {
-    border-color: #007bff;
-    outline: none;
-    box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
-}
-
-/* Button Styling */
-.login-button {
-    background-color: #007bff;
-    color: #ffffff;
-    padding: 10px;
-    width: 100%;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.register {
-    color: #b64444;
-    padding: 10px;
-    width: 100%;
-    border: none;
-    border-radius: 4px;
-    font-size: 20px;
-    margin-top: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.register:hover {
-    color: #0036b3;
-}
-
-.login-button:hover {
-    background-color: #00b354;
-}
-
-/* Error Message */
-.error-message {
-    color: #ff4d4d;
-    font-size: 14px;
-    margin-bottom: 15px;
-}
-
-/* ###############Login Page##################*/
-
-/* ###############Register Page##################*/
-
-.register-container {
-    width: 100%;
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.register-container h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.input-group {
-    margin-bottom: 15px;
-}
-
-.input-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.input-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
 }
 
 .error-message {
-    color: red;
-    font-size: 14px;
+    color: #ff6b6b;
+    font-size: 0.9em;
     text-align: center;
+    margin-bottom: 1em;
 }
 
 .success-message {
-    color: green;
-    font-size: 14px;
+    color: #4caf50;
+    font-size: 0.9em;
     text-align: center;
+    margin-bottom: 1em;
 }
 
-.register-button {
+/* Form Container Styles */
+.login-container,
+.register-container {
+    background-color: #08080856;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
     width: 100%;
-    padding: 10px;
-    background-color: #28a745;
+    box-sizing: border-box;
+}
+
+/* Input Group Styles */
+.input-group {
+    margin-bottom: 1.5em;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #d5d4d3;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.8em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #a15a4a;
+    outline: none;
+    box-shadow: 0 0 3px rgb(156, 78, 61);
+}
+
+/* Button Styles */
+button {
+    width: 100%;
+    padding: 0.8em;
+    font-size: 1em;
+    background-color: #e39684;
     color: white;
-    font-size: 16px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.register-button:hover {
-    background-color: #218838;
+button:hover {
+    background-color: #a15a4a;
 }
 
-/* ###############Register Page##################*/
+/* Register Link Style */
+.register {
+    display: block;
+    text-align: center;
+    margin-top: 1em;
+    color: #e39684;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.register:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+
+    .login-container,
+    .register-container {
+        padding: 1.5em;
+    }
+}

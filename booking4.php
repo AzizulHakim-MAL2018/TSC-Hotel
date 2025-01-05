@@ -9,6 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 // Function to display the header
+// Function to display the header
 function displayHeader($username, $FirstName)
 {
     echo "<header class='header'>";
@@ -23,9 +24,18 @@ function displayHeader($username, $FirstName)
     echo "<li><a href='loginpage.php' class='logout-button'>Logout</a></li>";
     echo "</ul>";
     echo "</nav>";
-    echo "<div class='user-info'>Welcome, $FirstName ($username)</div>";
+    echo "<div class='user-info'><a href='profilepage.php'>Welcome, $FirstName ($username)</a></div>";
     echo "</div>";
     echo "</header>";
+}
+
+function displayFooter()
+{
+    echo "<footer class='footer'>";
+    echo "<div class='container'>";
+    echo "<p>&copy; 2024 TSC Hotel. All rights reserved.</p>";
+    echo "</div>";
+    echo "</footer>";
 }
 
 // Check if rooms were selected or retained
@@ -134,12 +144,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['start_date'], $_POST[
             </form>
         </div>
     </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 TSC Hotel. All rights reserved.</p>
-        </div>
-    </footer>
+    <?php displayFooter(); ?>
 </body>
 
 </html>

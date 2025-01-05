@@ -19,13 +19,23 @@ function displayHeader($username, $FirstName)
     echo "<li><a href='Homepage.php'>Home</a></li>";
     echo "<li><a href='room4.php'>Rooms</a></li>";
     echo "<li><a href='bookingrecord.php'>Record</a></li>";
+    echo "<li><a href='reviewpage.php'>Review</a></li>";
     echo "<li><a href='contact.php'>Contact</a></li>";
     echo "<li><a href='loginpage.php' class='logout-button'>Logout</a></li>";
     echo "</ul>";
     echo "</nav>";
-    echo "<div class='user-info'>Welcome, $FirstName ($username)</div>";
+    echo "<div class='user-info'><a href='profilepage.php'>Welcome, $FirstName ($username)</a></div>";
     echo "</div>";
     echo "</header>";
+}
+
+function displayFooter()
+{
+    echo "<footer class='footer'>";
+    echo "<div class='container'>";
+    echo "<p>&copy; 2024 TSC Hotel. All rights reserved.</p>";
+    echo "</div>";
+    echo "</footer>";
 }
 
 $userId = $_SESSION['user_id'];
@@ -73,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_booking_id'])) 
 <head>
     <meta charset="UTF-8">
     <title>View Bookings</title>
-    <link rel="stylesheet" href="s/styles.css">
+    <link rel="stylesheet" href="s/s2.css">
 </head>
 
 <body>
@@ -88,6 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_booking_id'])) 
                     <th>End Date</th>
                     <th>Rooms</th>
                     <th>Status</th>
+                    <th>amount</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -99,11 +110,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_booking_id'])) 
                         <td><?= isset($booking['EndDate']) ? htmlspecialchars($booking['EndDate']->format('Y-m-d')) : 'N/A'; ?></td>
                         <td><?= htmlspecialchars($booking['RoomNumbers'] ?? 'N/A'); ?></td>
                         <td><?= htmlspecialchars($booking['Status'] ?? 'N/A'); ?></td>
+                        <td><?= htmlspecialchars($booking['Amount'] ?? 'N/A'); ?></td>
                         <td>
                             <a class="r_button" href="editbooking.php?booking_id=<?= htmlspecialchars($booking['BookingID']); ?>">Edit</a>
                             <form method="POST" style="display:inline;">
                                 <input type="hidden" name="delete_booking_id" value="<?= htmlspecialchars($booking['BookingID']); ?>">
-                                <button class="r_button" type="submit" onclick="return confirm('Are you sure you want to delete this booking?');">Delete</button>
+                                <button type="submit" onclick="return confirm('Are you sure you want to delete this booking?');">Delete</button>
                             </form>
                         </td>
                     </tr>
@@ -111,11 +123,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_booking_id'])) 
             </tbody>
         </table>
     </main>
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 TSC Hotel. All rights reserved.</p>
-        </div>
-    </footer>
+    <?php displayFooter(); ?>
 </body>
 
 </html>

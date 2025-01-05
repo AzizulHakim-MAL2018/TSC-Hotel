@@ -19,11 +19,12 @@ function displayHeader($username, $FirstName)
     echo "<li><a href='Homepage.php'>Home</a></li>";
     echo "<li><a href='room4.php'>Rooms</a></li>";
     echo "<li><a href='bookingrecord.php'>Record</a></li>";
+    echo "<li><a href='reviewpage.php'>Review</a></li>";
     echo "<li><a href='contact.php'>Contact</a></li>";
     echo "<li><a href='loginpage.php' class='logout-button'>Logout</a></li>";
     echo "</ul>";
     echo "</nav>";
-    echo "<div class='user-info'>Welcome, $FirstName ($username)</div>";
+    echo "<div class='user-info'><a href='profilepage.php'>Welcome, $FirstName ($username)</a></div>";
     echo "</div>";
     echo "</header>";
 }

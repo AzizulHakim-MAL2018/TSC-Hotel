@@ -77,6 +77,7 @@ sqlsrv_close($conn);
             </div>
             <button type="submit" class="register-button">Register</button>
         </form>
+        <a class="register" href="Loginpage.php">Click here for login</a>
     </div>
 </body>
 
